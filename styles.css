@@ -280,7 +280,6 @@ ol {
     gap: 5rem;
   
     list-style: none;
-    counter-reset: stepnr;
   }
   
   li:nth-child(6n + 1) { --accent-color: #444444d1 }
@@ -291,52 +290,37 @@ ol {
   li:nth-child(6n + 6) { --accent-color: #000000d1 }
   
   ol li {
-    counter-increment: stepnr;
-    width: 18rem;
+    width: 15rem;
     --borderS: 0.1rem;
     aspect-ratio: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: calc(var(--borderS) + 2rem);
+    padding-left: calc(var(--borderS) + 3rem);
     position: relative;
   }
   ol li::before,
   ol li::after {
     inset: 0;
     position: absolute;
-    border: var(--borderS) solid #ffffff68;
+    border: var(--borderS) solid #ffffff;
     line-height: 1.1;
-  }
-  ol li::before {
-    content: counter(stepnr);
-    color: var(--accent-color);
-    padding-left: 11rem;
-    font-size: 12rem;
-    font-weight: 700;
-    overflow: hidden;
   }
   
   ol li::after {
     content: "";
-    filter: drop-shadow(-0.25rem 0.25rem 0.0675rem rgba(0, 0, 0, 0.75)) blur(5px);
+    filter: drop-shadow(0.1rem 0.1rem 0.0675rem rgba(0, 0, 0, 0.254)) blur(1px);
   }
   
-  ol li > * { width: 8rem }
+  ol li > * { width: 9rem }
   ol li .icon { font-size: 2rem; color: var(--accent-color); text-align: center }
-  ol li .title { font-size: 1.5rem; font-weight: 500 }
+  ol li .title { font-size: 1.1rem; font-weight: 500; padding: 0.5em; }
   ol li .descr { font-size: 0.8rem; font-weight: 300 }
   
   .text-blk {
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    line-height: 25px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 1.3rem;
     font-weight: 100;
   }
   
@@ -344,18 +328,11 @@ ol {
     min-height: 75px;
     height: fit-content;
     width: 100%;
-    padding-top: 10px;
+    padding: 10px;
     color: #f6f3f3;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 0px;
-    margin-right: auto;
-    margin-bottom: 0px;
-    margin-left: auto;
-    justify-content: flex-start;
+    justify-content: center;
   }
   
   .responsive-container-block.bigContainer {
@@ -375,14 +352,8 @@ ol {
     max-width: 800px;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    margin-top: 150px;
-    margin-right: auto;
-    margin-bottom: 150px;
-    margin-left: auto;
+    padding: 20px;
+    margin: 150px 0;
     background-color: rgba(91, 91, 91, 0.613);
     box-shadow: #e1e1e1 0px 0px 10px 5px;
   }
@@ -889,14 +860,6 @@ select:focus {
     padding-top: 1%;
 }
 
-/* Add this CSS at the end of your existing styles */
-
-@media screen and (max-width: 800px) {
-  
-    .services .service-image img{
-        width: 100%;
-    }
-}
 @media screen and (max-width: 700px) {
     .footer-nav ul li a{
         font-size: 0.5rem;
@@ -912,5 +875,25 @@ select:focus {
     .dot {
         font-size: 0.8rem;
     }
-
+    .banner .banner-text h1 {
+        font-size: 1.2rem;
+    }
+    .banner .banner-text p {
+        font-size: 0.7rem;
+        margin: 3%;
+    }
+    .btn {
+        font-size: 0.7rem;
+    }
+ 
+    .services .services-text h1 {
+        font-size: 1.2rem;
+    }
+    .services .services-text p {
+        font-size: 0.7rem;
+    }
+    
+    .contact-us .contact-header {
+        font-size: 1rem;
+    }
 }
